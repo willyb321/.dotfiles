@@ -1,0 +1,94 @@
+[global_config]
+  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  title_font = "SourceCodePro+Powerline+Awesome Regular, 11"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = df434877-a830-49ee-a8cf-a1a28fa7d928
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:32
+      size = 2560, 1372
+      title = willb@willb-antegros: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 684
+      ratio = 0.500365764448
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1278
+      ratio = 0.500195694716
+      type = HPaned
+    [[[child5]]]
+      order = 1
+      parent = child1
+      position = 1278
+      ratio = 0.500195694716
+      type = HPaned
+    [[[child7]]]
+      order = 1
+      parent = child5
+      position = 343
+      ratio = 0.50293255132
+      type = VPaned
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 64e6c505-08c2-4467-b632-922a1be9713c
+    [[[terminal4]]]
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 06f939f7-4ecb-48b6-8500-ec8e0db2de5f
+    [[[terminal6]]]
+      order = 0
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 007716db-da3a-421e-b57c-c853cde38c73
+    [[[terminal8]]]
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      command = "htop"
+      uuid = df434877-a830-49ee-a8cf-a1a28fa7d928
+    [[[terminal9]]]
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      command = "journalctl -f"
+      uuid = af2356c1-927d-4895-b313-28cf382f8cbe
+  [[actualdefault]]
+    [[[child1]]]
+      command = ""
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    cursor_color = "#16afca"
+    font = "SourceCodePro+Powerline+Awesome Regular, 11"
+    foreground_color = "#839496"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_infinite = True
+    use_system_font = False

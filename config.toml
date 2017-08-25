@@ -2,6 +2,9 @@
 # macros
 #
 
+[macros.mkdirp]
+	prefix = ["mkdir", "-p"]
+
 [macros.clone]
     prefix = ["git", "clone"]
 
@@ -25,16 +28,19 @@
 #
 # Tasks
 #
+
 [tasks.default]
     links = [
         [".editorconfig"],
 		[".vimrc"],
+		[".config/terminator/config", ".config/terminator/config"],
+		[".config/neofetch/config", ".config/neofetch/config"]
     ]
 
 [tasks.macos]
 	deps = ["default"]
 	links = [
-		[".zshrc", ".zshrc.macos"]
+		[".zshrc", ".zshrc.macos"],
 	]
 
 [tasks.server]
@@ -43,9 +49,13 @@
 	links = [
 		[".zshrc", ".zshrc.server"]
 	]
+
 [tasks.desktop]
 	deps = ["default"]
 	cmds = [["@install", "vim go"]]
 	links = [
-		[".zshrc", ".zshrc.desktop"]
+		[".zshrc", ".zshrc.desktop"],
 	]
+
+[tasks.bootstrap]
+	cmds = [["touch", "${HM_DEST}/.zsh_secrets"], ["@mkdirp", "${HM_DEST}/go", "${HM_DES}T/.nmbin"]]
