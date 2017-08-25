@@ -1,0 +1,51 @@
+#
+# macros
+#
+
+[macros.clone]
+    prefix = ["git", "clone"]
+
+[macros.go-get]
+    prefix = ["go", "get"]
+
+[macros.install__apt]
+    prefix = ["sudo", "apt-get", "install", "-y"]
+
+[macros.install__pacman]
+    prefix = ["sudo", "pacman", "-S"]
+
+[macros.install__brew]
+    prefix = ["brew", "install"]
+
+
+[macros.npm-install]
+    deps = ["node"]
+    prefix = ["npm", "install", "-g"]
+
+#
+# Tasks
+#
+[tasks.default]
+    links = [
+        [".editorconfig"],
+		[".vimrc"],
+    ]
+
+[tasks.macos]
+	deps = ["default"]
+	links = [
+		[".zshrc.macos", "$HM_DEST/.zshrc"]
+	]
+
+[tasks.server]
+	deps = ["default"]
+	cmds = [["@install", "vim go"]]
+	links = [
+		[".zshrc.server", "$HM_DEST/.zshrc"]
+	]
+[tasks.desktop]
+	deps = ["default"]
+	cmds = [["@install", "vim go"]]
+	links = [
+		[".zshrc.desktop", "$HM_DEST/.zshrc"]
+	]
