@@ -34,18 +34,18 @@
 [tasks.macos]
 	deps = ["default"]
 	links = [
-		[".zshrc.macos", "$HM_DEST/.zshrc"]
+		[".zshrc", ".zshrc.macos"]
 	]
 
 [tasks.server]
 	deps = ["default"]
 	cmds = [["@install", "vim go"]]
 	links = [
-		[".zshrc.server", "$HM_DEST/.zshrc"]
+		[".zshrc", ".zshrc.server"]
 	]
 [tasks.desktop]
 	deps = ["default"]
 	cmds = [["@install", "vim go"]]
 	links = [
-		[".zshrc.desktop", "$HM_DEST/.zshrc"]
+		[".zshrc", ".zshrc.desktop"]
 	]
