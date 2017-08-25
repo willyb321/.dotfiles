@@ -1,3 +1,4 @@
 # My Dotfiles
 
-Install with [Dotdrop](https://github.com/deadc0de6/dotdrop)
+Install with [Homemaker]https://github.com/FooSoft/homemaker)
+
