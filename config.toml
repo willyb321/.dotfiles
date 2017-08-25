@@ -52,7 +52,7 @@
 
 [tasks.desktop]
 	deps = ["default"]
-	cmds = [["@install", "vim go"]]
+	cmds = [["@install", "vim", "go"]]
 	links = [
 		[".zshrc", ".zshrc.desktop"],
 	]
