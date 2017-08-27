@@ -117,6 +117,7 @@ alias getWifiJSON="scp gthsmini:~/WifiJSON/people.json ~/WifiJSON"
 alias externalWifi="sudo /Library/Application\ Support/WLAN/StatusBarApp.app/Contents/MacOS/wpa_supplicant -Dosx -ien7  -c ~/wpa/profile1x.rtl"
 alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
+alias local-npm="local-npm -d ~/.npmmirror"
 #eval "$(thefuck --alias)"
 PERL5LIB="/Users/willb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/willb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;

@@ -47,6 +47,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'buoto/gotests-vim'
+
 " End plugins
 if iCanHazVundle == 0
     echo "Installing Vundles, please ignore key map error messages"
