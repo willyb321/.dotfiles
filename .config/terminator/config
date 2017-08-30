@@ -13,15 +13,15 @@
       maximised = True
       order = 0
       parent = ""
-      position = 0:32
-      size = 2560, 1372
+      position = 0:0
+      size = 2560, 1375
       title = willb@willb-antegros: ~
       type = Window
     [[[child1]]]
       order = 0
       parent = child0
-      position = 684
-      ratio = 0.500365764448
+      position = 686
+      ratio = 0.500729927007
       type = VPaned
     [[[child2]]]
       order = 0
@@ -29,50 +29,124 @@
       position = 1278
       ratio = 0.500195694716
       type = HPaned
-    [[[child5]]]
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 343
+      ratio = 0.503671071953
+      type = VPaned
+    [[[child7]]]
       order = 1
       parent = child1
       position = 1278
       ratio = 0.500195694716
       type = HPaned
-    [[[child7]]]
-      order = 1
-      parent = child5
-      position = 343
-      ratio = 0.50293255132
-      type = VPaned
     [[[terminal3]]]
+      command = ""
       order = 0
       parent = child2
       profile = default
       type = Terminal
       uuid = 64e6c505-08c2-4467-b632-922a1be9713c
-    [[[terminal4]]]
-      order = 1
-      parent = child2
+    [[[terminal5]]]
+      command = ncmpcpp
+      order = 0
+      parent = child4
       profile = default
       type = Terminal
       uuid = 06f939f7-4ecb-48b6-8500-ec8e0db2de5f
     [[[terminal6]]]
-      order = 0
-      parent = child5
+      command = journalctl -f
+      order = 1
+      parent = child4
       profile = default
       type = Terminal
-      uuid = 007716db-da3a-421e-b57c-c853cde38c73
+      uuid = 180ef1ff-866e-4002-88c0-d00542e86533
     [[[terminal8]]]
+      command = ""
       order = 0
       parent = child7
       profile = default
       type = Terminal
-      command = "htop"
-      uuid = df434877-a830-49ee-a8cf-a1a28fa7d928
+      uuid = 007716db-da3a-421e-b57c-c853cde38c73
     [[[terminal9]]]
+      command = glances
       order = 1
       parent = child7
       profile = default
       type = Terminal
-      command = "journalctl -f"
-      uuid = af2356c1-927d-4895-b313-28cf382f8cbe
+      uuid = df434877-a830-49ee-a8cf-a1a28fa7d928
+  [[Monitors]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 64e6c505-08c2-4467-b632-922a1be9713c
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 2560, 1375
+      title = willb@willb-antegros: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 686
+      ratio = 0.500729927007
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1278
+      ratio = 0.500195694716
+      type = HPaned
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 343
+      ratio = 0.503671071953
+      type = VPaned
+    [[[child7]]]
+      order = 1
+      parent = child1
+      position = 1278
+      ratio = 0.500195694716
+      type = HPaned
+    [[[terminal3]]]
+      command = journalctl -f
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 64e6c505-08c2-4467-b632-922a1be9713c
+    [[[terminal5]]]
+      command = journalctl -f
+      order = 0
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 06f939f7-4ecb-48b6-8500-ec8e0db2de5f
+    [[[terminal6]]]
+      command = vnstat -l
+      order = 1
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 180ef1ff-866e-4002-88c0-d00542e86533
+    [[[terminal8]]]
+      command = ncmpcpp
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 007716db-da3a-421e-b57c-c853cde38c73
+    [[[terminal9]]]
+      command = glances
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = df434877-a830-49ee-a8cf-a1a28fa7d928
   [[actualdefault]]
     [[[child1]]]
       command = ""
@@ -82,6 +156,72 @@
     [[[window0]]]
       parent = ""
       type = Window
+  [[test]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 64e6c505-08c2-4467-b632-922a1be9713c
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 2560, 1375
+      title = willb@willb-antegros: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 723
+      ratio = 0.527737226277
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1277
+      ratio = 0.499804305284
+      type = HPaned
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 317
+      ratio = 0.441504178273
+      type = VPaned
+    [[[child7]]]
+      order = 1
+      parent = child1
+      position = 1375
+      ratio = 0.538160469667
+      type = HPaned
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 64e6c505-08c2-4467-b632-922a1be9713c
+    [[[terminal5]]]
+      order = 0
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 06f939f7-4ecb-48b6-8500-ec8e0db2de5f
+    [[[terminal6]]]
+      order = 1
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 180ef1ff-866e-4002-88c0-d00542e86533
+    [[[terminal8]]]
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 10b590d7-5bfa-4e2d-9836-ef293aed2ce1
+    [[[terminal9]]]
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = df434877-a830-49ee-a8cf-a1a28fa7d928
 [plugins]
 [profiles]
   [[default]]

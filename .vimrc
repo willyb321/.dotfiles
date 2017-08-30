@@ -18,6 +18,7 @@ if !filereadable(vundle_readme)
     echo ""
     silent !mkdir -p ~/.vim/bundle
     silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	silent !mkdir -p ~/.local/vim/backupfiles ~/.local/vim/swapfiles ~/.local/vim/undofiles
     let iCanHazVundle=0
 endif
 
