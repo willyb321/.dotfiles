@@ -116,7 +116,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator node_version)
 export LC_ALL=en_AU.UTF-8
 alias updatemicro="go get -d -v github.com/zyedidia/micro/... && (cd $GOPATH/src/github.com/zyedidia/micro; make install)"
 neofetch
-
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
