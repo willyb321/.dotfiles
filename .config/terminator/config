@@ -70,7 +70,7 @@
       type = Terminal
       uuid = 007716db-da3a-421e-b57c-c853cde38c73
     [[[terminal9]]]
-      command = glances
+      command = htop
       order = 1
       parent = child7
       profile = default
