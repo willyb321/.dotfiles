@@ -74,6 +74,7 @@ PATH="$PATH:$HOME/.yarn/bin"
 PATH="$PATH:/Users/willb/.local/bin"
 PATH="$PATH:/Users/willb/.cargo/bin"
 PATH="$HOME/.ellipsis/bin:$PATH"
+PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH
@@ -92,7 +93,9 @@ fi
 export EDITOR
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -119,10 +122,6 @@ alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
 alias local-npm="local-npm -d ~/.npmmirror"
 #eval "$(thefuck --alias)"
-PERL5LIB="/Users/willb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/willb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/willb/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/willb/perl5"; export PERL_MM_OPT;
 source <(antibody init)
 source ~/.zsh_secrets
 zsh_Spotify () {
@@ -194,6 +193,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_proxy  custom_wifi_signal node
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 neofetch
+#source <(gopass completion zsh)
 source $HOME/.zsh_proxy
 
 ulimit -n 65536 65536
