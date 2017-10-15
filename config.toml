@@ -30,6 +30,7 @@
 #
 
 [tasks.default]
+	deps = ["bootstrap"]
     links = [
         [".editorconfig"],
 		[".vimrc"],
@@ -45,17 +46,15 @@
 
 [tasks.server]
 	deps = ["default"]
-	cmds = [["@install", "vim"]]
 	links = [
 		[".zshrc", ".zshrc.server"]
 	]
 
 [tasks.desktop]
 	deps = ["default"]
-	cmds = [["@install", "vim", "go"]]
 	links = [
 		[".zshrc", ".zshrc.desktop"],
 	]
 
 [tasks.bootstrap]
-	cmds = [["touch", "${HM_DEST}/.zsh_secrets"], ["@mkdirp", "${HM_DEST}/go", "${HM_DES}T/.nmbin"]]
+	cmds = [["touch", "${HM_DEST}/.zsh_secrets"], ["@mkdirp", "${HM_DEST}/go", "${HM_DEST}/.nmbin"], ["npm", "config", "set", "prefix", "${HM_DEST}/.nmbin"]]
