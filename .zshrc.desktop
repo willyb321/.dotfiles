@@ -123,3 +123,5 @@ fi
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+source <(gopass completion zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
