@@ -33,10 +33,6 @@ call vundle#begin('~/.local/vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'vimwiki/vimwiki'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'itchyny/lightline.vim'
-Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -74,15 +70,6 @@ filetype plugin indent on    " required
 " Use Vim settings, rather than Vi settings (much better!).
 
 " End Vundle
-" Solarized / Material Colours
-if has("gui_vimr")
-	set background=dark
-	colorscheme hybrid_material
-else
-	set background=dark
-	colorscheme solarized
-endif
-" End Solarized Colours
 " Make lightbar work all the time.
 set laststatus=2
 " leave insert mode quickly
