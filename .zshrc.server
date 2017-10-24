@@ -51,10 +51,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast npm sudo z colored-man-pages wakeonlan command-not-found git-extras)
-
+plugins=(gitfast npm sudo z colored-man-pages wakeonlan command-not-found git-extras zsh-completions)
+autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
-
+setopt completealiases
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
