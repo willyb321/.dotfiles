@@ -35,7 +35,9 @@
         [".editorconfig"],
 		[".vimrc"],
 		[".config/terminator/config", ".config/terminator/config"],
-		[".config/neofetch/config", ".config/neofetch/config"]
+		[".config/neofetch/config", ".config/neofetch/config"],
+		[".config/tilix/", ".config/tilix/"],
+		["tilix_layout.json"]
     ]
 
 [tasks.macos]

@@ -12,6 +12,7 @@
 
 " This automatically initialises Vundle if not installed
 let iCanHazVundle=1
+silent !mkdir -p ~/.local/vim/backupfiles ~/.local/vim/swapfiles ~/.local/vim/undofiles
 let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
