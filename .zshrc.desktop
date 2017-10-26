@@ -71,7 +71,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
    export EDITOR='/usr/bin/vim'
  fi
-
+zstyle ':completion:*' hosts
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
