@@ -73,7 +73,6 @@ PATH="$PATH:/opt/local/bin"
 PATH="$PATH:$HOME/.yarn/bin"
 PATH="$PATH:/Users/willb/.local/bin"
 PATH="$PATH:/Users/willb/.cargo/bin"
-PATH="$HOME/.ellipsis/bin:$PATH"
 PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
