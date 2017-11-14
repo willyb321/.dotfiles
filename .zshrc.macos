@@ -114,13 +114,9 @@ alias amend="git commit -a --amend --no-edit"
 alias todos="todo.sh"
 alias 2do="todo.sh"
 alias serve="http-server -o -c-1"
-alias updatemicro="(go get -d -v github.com/zyedidia/micro/...; cd $GOPATH/src/github.com/zyedidia/micro; make install)"
-alias updateprojects="curl -X POST https://api.netlify.com/build_hooks/5924f53f3c1d5e1c2071f2cc"
-alias getWifiJSON="scp gthsmini:~/WifiJSON/people.json ~/WifiJSON"
 alias externalWifi="sudo /Library/Application\ Support/WLAN/StatusBarApp.app/Contents/MacOS/wpa_supplicant -Dosx -ien7  -c ~/wpa/profile1x.rtl"
 alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
-alias local-npm="local-npm -d ~/.npmmirror"
 eval "$(thefuck --alias)"
 source <(antibody init)
 source ~/.zsh_secrets
