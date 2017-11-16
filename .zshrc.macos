@@ -120,6 +120,12 @@ alias lsdotfiles="printf '%s\n' .*"
 eval "$(thefuck --alias)"
 source <(antibody init)
 source ~/.zsh_secrets
+# ZSH-histdb
+source ~/projects/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd  histdb-update-outcome
+
+
 POWERLEVEL9K_CUSTOM_IS_XCODE="zsh_isXcode"
 function petprev() {
   PREV=$(fc -lrn | head -n 1)
