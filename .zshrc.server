@@ -87,8 +87,14 @@ export GOPATH="/home/willb/go"
 PATH="$PATH:/home/willb/go/bin"
 PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/.nmbin/bin"
+PATH="$PATH:$HOME/.cargo/bin"
 export PATH
 source $HOME/.zsh_secrets
+# ZSH Histdb
+source ~/projects/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd  histdb-update-outcome
+
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/willb/.nmbin/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh

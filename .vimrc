@@ -92,7 +92,7 @@ set dir=~/.local/vim/swapfiles
 " End Swap / backup / undo files
 
 " Vim Wiki
-let g:vimwiki_list = [{'path': '~/Google Drive/vimwiki', 'auto_export': 1, 'auto_toc': 1}]
+let g:vimwiki_list = [{'path': '~/vimwiki', 'auto_export': 1, 'auto_toc': 1}]
 " End Vim Wiki
 
 " Powerline config
