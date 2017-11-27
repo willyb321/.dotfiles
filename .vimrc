@@ -46,6 +46,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'buoto/gotests-vim'
+Bundle 'roman/golden-ratio'
 
 " End plugins
 if iCanHazVundle == 0
