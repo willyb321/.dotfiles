@@ -50,7 +50,7 @@ DISABLE_LS_COLORS="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast node yarn bower osx extract vagrant git-extras httpie docker)
+plugins=(git node yarn bower osx extract vagrant git-extras httpie docker)
 
 # User configuration
 export GOPATH="$HOME/go"
