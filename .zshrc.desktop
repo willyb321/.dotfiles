@@ -98,7 +98,7 @@ PATH="$PATH:$(go env GOPATH)/bin"
 PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
 PATH="$PATH:$HOME/.cargo/bin"
-PATH="$PATH:$HOME/.nmbin/bin"
+PATH="$HOME/.nmbin/bin:$PATH"
 PATH="/usr/lib/ccache/bin/:$PATH"
 export PATH
 zsh_wifi_signal(){
