@@ -45,6 +45,11 @@
 	links = [
 		[".zshrc", ".zshrc.macos"],
 	]
+[tasks.archmbp]
+	deps = ["default"]
+	links = [
+		[".zshrc", ".zshrc.archmbp"],
+	]
 
 [tasks.server]
 	deps = ["default"]

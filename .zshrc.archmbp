@@ -1,0 +1,192 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/home/willb/.oh-my-zsh
+export TERM="xterm-256color"
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+POWERLEVEL9K_MODE="awesome-patched"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+DEFAULT_USER="willb"
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+DISABLE_LS_COLORS="false"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git node yarn bower extract vagrant git-extras httpie docker)
+
+# User configuration
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# PATH stuff.
+PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/.nmbin/bin:$PATH"
+PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/usr/bin"
+PATH="$PATH:/bin"
+PATH="$PATH:/usr/sbin"
+PATH="$PATH:/sbin"
+PATH="$PATH:$HOME/bin"
+PATH="$PATH:/opt/metasploit-framework/bin"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/opt/local/sbin"
+PATH="$PATH:/opt/local/bin"
+PATH="$PATH:$HOME/.yarn/bin"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.cargo/bin"
+PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH
+
+source $ZSH/oh-my-zsh.sh
+export LANG=en_AU.UTF-8
+export LC_COLLATE=en_AU.UTF-8
+export LC_ALL=en_AU.UTF-8
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   EDITOR='/usr/bin/vim'
+else
+   EDITOR='/usr/bin/vim'
+fi
+export EDITOR
+zstyle ':completion:*' hosts
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias shit="git checkout -- ."
+alias amend="git commit -a --amend --no-edit"
+alias todos="todo.sh"
+alias 2do="todo.sh"
+alias serve="http-server -o -c-1"
+alias toggle-prox=". prox-toggle"
+alias lsdotfiles="printf '%s\n' .*"
+eval "$(thefuck --alias)"
+source ~/.zsh_secrets
+# ZSH-histdb
+source ~/projects/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd  histdb-update-outcome
+
+
+POWERLEVEL9K_CUSTOM_IS_XCODE="zsh_isXcode"
+function petprev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+zsh_proxy(){
+	#e=$(networksetup -getwebproxy wi-fi | grep "No")
+	#if [ -n "$e" ]; then
+	#  echo "Proxy: Off"
+	#else
+	#  echo "Proxy: On"
+	#fi
+}
+
+zsh_mpd(){
+	if [ -f ~/.mpd/mpd.pid ]; then
+		e=`mpc -f "%artist% - %title%" current | head -n1`
+		if [ -z "$e" ]; then
+			echo "No Music Playing"
+		else
+			echo "$e"
+		fi
+	else
+		echo "MPD Not Running"
+	fi
+}
+
+zsh_wifi_signal(){
+	local signal=$(nmcli d wifi | grep "^\*" | grep -v "\*.*SSID" | awk '{ print $2 " " $5 " " $6 }')
+	local signum=$(nmcli d wifi | grep "^\*" | grep -v "\*.*SSID" | awk '{ print $7 }')
+	local color='%F{yellow}'
+	[[ $signum -gt 75 ]] && color='%F{green}'
+	[[ $signum -lt 50 ]] && color='%F{red}'
+	echo -n "%{$color%}\UE1AD  $signal%{%f%}"
+}
+
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="190"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="198"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
+POWERLEVEL9K_CUSTOM_PROXY="zsh_proxy"
+POWERLEVEL9K_CUSTOM_MPD="zsh_mpd"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_proxy custom_mpd  custom_wifi_signal node_version todo)
+POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+zstyle ':completion:*' hosts
+zstyle ':completion:*' users
+zstyle ':completion:*' known-hosts-files ~/.ssh/not_known_hosts
+neofetch
+source <(gopass completion zsh)
+source $HOME/.zsh_proxy
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+. /etc/profile.d/fzf-extras.zsh
