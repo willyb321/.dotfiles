@@ -59,6 +59,7 @@ export GOBIN="$HOME/go/bin"
 
 # PATH stuff.
 PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.nmbin/bin:$PATH"
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:/usr/bin"
@@ -147,7 +148,7 @@ zsh_proxy(){
 }
 
 zsh_mpd(){
-	if [ -f ~/.mpd/mpd.pid ]; then
+	if [ -f ~/.config/mpd/pid ]; then
 		e=`mpc -f "%artist% - %title%" current | head -n1`
 		if [ -z "$e" ]; then
 			echo "No Music Playing"

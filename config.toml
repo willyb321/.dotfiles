@@ -34,9 +34,18 @@
     links = [
         [".editorconfig"],
 		[".vimrc"],
-		[".config/terminator/config", ".config/terminator/config"],
-		[".config/neofetch/config", ".config/neofetch/config"],
-		[".config/tilix/", ".config/tilix/"],
+		[".config/terminator/"],
+		[".config/neofetch/"],
+		[".config/tilix/"],
+		[".config/bspwm"],
+		[".config/nvim"],
+		[".config/i3"],
+		[".config/fontconfig"],
+		[".config/compton.conf"],
+		[".config/alacritty"],
+		[".config/rofi"],
+		[".config/sxhkd"],
+		[".config/polybar"],
 		["tilix_layout.json"]
     ]
 
