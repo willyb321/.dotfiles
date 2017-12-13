@@ -30,6 +30,8 @@ l_dimblur="$folder/l_dimblur.png"
 
 prelock() {
 	pkill -u "$USER" -USR1 dunst
+	pactl set-sink-mute 0 toggle
+	mpc pause
 }
 
 lock() {
@@ -55,6 +57,7 @@ lock() {
 
 postlock() {
 	pkill -u "$USER" -USR2 dunst
+	pactl set-sink-mute 0 toggle
 }
 
 rec_get_random() {
