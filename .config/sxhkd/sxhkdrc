@@ -49,7 +49,7 @@ super + shift + 4
 
 # Lock
 super + l
-	/home/willb/.bin/i3lock-bls -l
+	/home/willb/.bin/i3lock-bls -l dimblur
 
 # ==================================================
 # bspwm hotkeys

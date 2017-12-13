@@ -14,6 +14,7 @@ nm-applet &
 caffeine &
 mpd
 sxhkd &
+kdeconnect-indicator &
 $HOME/.config/polybar/launch_polybar.sh &
 
 bspc monitor -d one two three four five six seven
