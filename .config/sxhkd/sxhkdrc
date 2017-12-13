@@ -45,7 +45,7 @@ shift + XF86MonBrightnessDown
   xbacklight -set 1
 
 super + shift + 4
-  scrot -q 100 '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png' --exec 'mv $f ~/Screenshots/'
+  scrot -q 85 '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png' --exec 'mv $f ~/Screenshots/'
 
 # Lock
 super + l

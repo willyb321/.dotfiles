@@ -4,6 +4,7 @@
 # ex. ~/Pictures/Somethig\ with\ spaces.jpg
 wallpaper=~/Pictures/parrot-abstract.jpg
 
+xrandr --output eDP1 --mode 1920x1200
 $HOME/.bin/i3lock-bls -u "$wallpaper" &
 feh --bg-fill $wallpaper &
 xss-lock -- $HOME/.bin/i3lock-bls -l dimblur &
@@ -26,7 +27,7 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 bspc config single_monocle       true
-bspc config click_to_focus			 true
+bspc config click_to_focus		 true
 
 # Rule examples
 bspc rule -a Zathura state=tiled
