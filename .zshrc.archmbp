@@ -74,10 +74,7 @@ PATH="$PATH:/opt/local/bin"
 PATH="$PATH:$HOME/.yarn/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.cargo/bin"
-PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH
 
 source $ZSH/oh-my-zsh.sh
 export LANG=en_AU.UTF-8
@@ -104,9 +101,6 @@ fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-export LDFLAGS=-L/usr/local/opt/openssl/lib
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -118,11 +112,6 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias shit="git checkout -- ."
-alias amend="git commit -a --amend --no-edit"
-alias todos="todo.sh"
-alias 2do="todo.sh"
-alias serve="http-server -o -c-1"
 alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
 eval "$(thefuck --alias)"
