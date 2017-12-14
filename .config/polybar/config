@@ -71,7 +71,7 @@ enable-ipc = true
 
 modules-left   = bspwm i3
 modules-center = mpd
-modules-right  = volume xbacklight battery date
+modules-right  = volume xbacklight battery date temperature cpu
 
 ;wm-restack = bspwm
 ;override-redirect = true
@@ -349,6 +349,22 @@ label-connected            = " %local_ip% "
 
 ;=====================================================
 
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Threshold temperature to display warning label
+; Default: 80
+warn-temperature = 80
 
 ;=====================================================
 ; Settings
@@ -363,7 +379,6 @@ compositing-border     = over
 ; vim:ft=dosini
 [module/cpu]
 type = internal/cpu
-
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 0.5

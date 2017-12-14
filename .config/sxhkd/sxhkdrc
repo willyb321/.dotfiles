@@ -14,6 +14,10 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# relaunch polybar
+super + shift  + Escape
+	/home/willb/.config/polybar/launch_polybar.sh
+
 XF86AudioRaiseVolume
   amixer -q sset 'Master' 1%+
 
@@ -32,11 +36,17 @@ XF86AudioNext
 XF86AudioPrev
 	mpc prev
 
+XF86KbdBrightnessUp
+	kbdlight up 5
+
+XF86KbdBrightnessDown
+	kbdlight down 5
+
 XF86MonBrightnessUp
-  xbacklight -inc 1
+  xbacklight -inc 5
 
 XF86MonBrightnessDown
-  xbacklight -dec 1
+  xbacklight -dec 5
 
 shift + XF86MonBrightnessUp
   xbacklight -set 50
@@ -57,7 +67,7 @@ super + l
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+	mpc pause && bspc quit
 
 # close and kill
 super + {_,shift + }q

@@ -138,7 +138,7 @@ zsh_proxy(){
 
 zsh_mpd(){
 	if [ -f ~/.config/mpd/pid ]; then
-		e=`mpc -f "%artist% - %title%" current | head -n1`
+		e=`mpc -f "%title%" current | head -n1`
 		if [ -z "$e" ]; then
 			echo "No Music Playing"
 		else
