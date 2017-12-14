@@ -71,7 +71,7 @@ enable-ipc = true
 
 modules-left   = bspwm i3
 modules-center = mpd
-modules-right  = volume xbacklight battery date temperature cpu
+modules-right  = volume xbacklight battery date
 
 ;wm-restack = bspwm
 ;override-redirect = true
