@@ -20,11 +20,11 @@ dimensions:
   #columns: 80
   columns: 100
   #lines: 24
-  lines: 30 
+  lines: 30
 
 # Scrollback buffer
 scrollback:
-  enabled: false 
+  enabled: false
   max_lines: 10000
 
 # Adds this many blank pixels of padding around the window
@@ -136,8 +136,8 @@ colors:
     blue:    '0x377375'
     magenta: '0xa04b73'
     cyan:    '0x578e57'
-    white:   '0xe6d4a3'  
-    
+    white:   '0xe6d4a3'
+
   # Dim colors (Optional)
   dim:
     black:   '0x000000'
@@ -283,8 +283,8 @@ key_bindings:
 # - Paste
 # - PasteSelection
 # - Copy (TODO)
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+#mouse_bindings:
+#  - { mouse: Middle, action: PasteSelection }
 
 mouse:
   double_click: { threshold: 300 }
