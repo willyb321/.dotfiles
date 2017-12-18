@@ -88,7 +88,6 @@ zstyle ':completion:*' known-hosts-files ~/.ssh/not_known_hosts
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias localtunnel="lt -s willyb321 -p 3000"
 source ~/.zsh_secrets
 #source ~/git-extras/etc/git-extras-completion.zsh
 export GOPATH="$HOME/go"
@@ -110,11 +109,11 @@ zsh_wifi_signal(){
 }
 
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
 POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=false
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator node_version)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_mpd node_version)
 export LC_ALL=en_AU.UTF-8
 alias updatemicro="go get -d -v github.com/zyedidia/micro/... && (cd $GOPATH/src/github.com/zyedidia/micro; make install)"
 neofetch
