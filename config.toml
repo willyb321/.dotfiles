@@ -41,7 +41,6 @@
 		[".config/bspwm"],
 		[".config/nvim"],
 		[".config/i3"],
-		[".config/fontconfig"],
 		[".config/compton.conf"],
 		[".config/alacritty"],
 		[".config/rofi"],
