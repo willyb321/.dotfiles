@@ -28,13 +28,13 @@ XF86AudioMute
   amixer -q sset 'Master' toggle
 
 XF86AudioPlay
-	mpc toggle
+	mpc -h /home/willb/.config/mpd/socket  toggle
 
 XF86AudioNext
-	mpc next
+	mpc n-h /home/willb/.config/mpd/socket next
 
 XF86AudioPrev
-	mpc prev
+	mpc  -h /home/willb/.config/mpd/socket  prev
 
 XF86KbdBrightnessUp
 	kbdlight up 5
