@@ -33,13 +33,13 @@
 	deps = ["bootstrap"]
     links = [
         [".editorconfig"],
-		[".vimrc"],
 		[".tmux.conf"],
 		[".config/terminator/"],
 		[".config/neofetch/"],
 		[".config/tilix/"],
 		[".config/bspwm"],
 		[".config/nvim"],
+		[".vimrc", ".config/nvim/init.vim"],
 		[".config/i3"],
 		[".config/compton.conf"],
 		[".config/alacritty"],
