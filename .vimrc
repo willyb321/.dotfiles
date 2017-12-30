@@ -13,12 +13,12 @@
 " This automatically initialises Vundle if not installed
 let iCanHazVundle=1
 silent !mkdir -p ~/.local/vim/backupfiles ~/.local/vim/swapfiles ~/.local/vim/undofiles
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+let vundle_readme=expand('~/.local/share/nvim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.local/share/nvim/bundle/Vundle.vim
 	silent !mkdir -p ~/.local/vim/backupfiles ~/.local/vim/swapfiles ~/.local/vim/undofiles
     let iCanHazVundle=0
 endif
@@ -27,8 +27,8 @@ endif
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.local/vim/bundle')
+set rtp+=~/.local/share/nvim/bundle/Vundle.vim
+call vundle#begin('~/.local/share/nvim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -46,7 +46,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'buoto/gotests-vim'
-Bundle 'roman/golden-ratio'
+Plugin 'scrooloose/nerdtree'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+
 
 " End plugins
 if iCanHazVundle == 0
@@ -163,6 +170,45 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+" Nerd tree config
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+
+" End
+
+" Minimap conifg
+let g:minimap_highlight='Visual'
+
+
+" End
+
+" Nerd commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+
+" End
+
+" Airline config
+let g:airline_powerline_fonts = 1
+
+
+"
+
+
+" Mouse
+set mouse=a
+
+" End
+
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
