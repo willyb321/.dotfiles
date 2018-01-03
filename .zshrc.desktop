@@ -117,6 +117,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_mpd node_version todo)
 export LC_ALL=en_AU.UTF-8
 alias updatemicro="go get -d -v github.com/zyedidia/micro/... && (cd $GOPATH/src/github.com/zyedidia/micro; make install)"
 alias t="todo.sh"
+alias vim="nvim"
 neofetch
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 # ZSH History DB
