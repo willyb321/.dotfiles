@@ -28,13 +28,13 @@ XF86AudioMute
   amixer -q sset 'Master' toggle
 
 XF86AudioPlay
-	mpc -h /home/willb/.config/mpd/socket  toggle
+	mpc -h /home/willb/.config/mpd/socket toggle
 
 XF86AudioNext
-	mpc n-h /home/willb/.config/mpd/socket next
+	mpc -h /home/willb/.config/mpd/socket next
 
 XF86AudioPrev
-	mpc  -h /home/willb/.config/mpd/socket  prev
+	mpc  -h /home/willb/.config/mpd/socket prev
 
 XF86KbdBrightnessUp
 	kbdlight up 5
@@ -54,8 +54,11 @@ shift + XF86MonBrightnessUp
 shift + XF86MonBrightnessDown
   xbacklight -set 1
 
-super + shift + 4
-  scrot -q 85 '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png' --exec 'mv $f ~/Screenshots/'
+super + ctrl + 3
+  scrot -q 85 '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png' --exec 'mv $f ~/Screenshots/ && notify-send -t 2000 "Full screen" "~/Screenshots/$f"'
+
+super + ctrl + 2
+  scrot -u -q 85 '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png' --exec 'mv $f ~/Screenshots/ && notify-send -t 2000 "Current window" "~/Screenshots/$f"'
 
 # Lock
 super + l

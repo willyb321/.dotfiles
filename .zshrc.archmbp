@@ -85,9 +85,9 @@ export LC_ALL=en_AU.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   EDITOR='/usr/bin/vim'
+   EDITOR='/usr/bin/nvim'
 else
-   EDITOR='/usr/bin/vim'
+   EDITOR='/usr/bin/nvim'
 fi
 export EDITOR
 zstyle ':completion:*' hosts
@@ -116,6 +116,40 @@ alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
 alias t="todo.sh"
 alias vim="nvim"
+
+# pko <content> : copy <content> to the clipboard
+pko() {
+    echo "$*" | piknik -copy
+}
+
+# pkf <file> : copy the content of <file> to the clipboard
+pkf() {
+    piknik -copy < $1
+}
+
+# pkc : read the content to copy to the clipboard from STDIN
+alias pkc='piknik -copy'
+
+# pkp : paste the clipboard content
+alias pkp='piknik -paste'
+
+# pkm : move the clipboard content
+alias pkm='piknik -move'
+
+# pkz : delete the clipboard content
+alias pkz='piknik -copy < /dev/null'
+
+# pkfr [<dir>] : send a whole directory to the clipboard, as a tar archive
+pkfr() {
+    tar czpvf - ${1:-.} | piknik -copy
+}
+
+# pkpr : extract clipboard content sent using the pkfr command
+alias pkpr='piknik -paste | tar xzhpvf -'
+
+# pkpr : extract clipboard content sent using the pkfr command
+alias pkpr='piknik -paste | tar xzhpvf -'
+
 eval "$(thefuck --alias)"
 source ~/.zsh_secrets
 # ZSH-histdb
