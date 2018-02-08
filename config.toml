@@ -46,6 +46,7 @@
 		[".config/rofi"],
 		[".config/sxhkd"],
 		[".config/polybar"],
+		[".config/awesome"],
 		[".config/dunst"],
 		["tilix_layout.json"],
 		["Pictures/parrot-abstract.jpg"],
