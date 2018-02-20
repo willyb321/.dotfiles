@@ -5,12 +5,12 @@ require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
-local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+xdg_menu = require("archmenu")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -19,6 +19,8 @@ require("awful.hotkeys_popup.keys")
 local volume_control = require("volume-control")
 
 volumecfg = volume_control({})
+
+local vicious = require("vicious")
 
 
 -- {{{ Error handling
@@ -49,7 +51,6 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.getdir("config") .. "themes/default/theme.lua")
-naughty.notify({title = tostring(awful.util.getdir("config") .. "themes/default/theme.lua")})
 -- This is used later as the default terminal and editor to run.
 terminal = "env GDK_DPI_SCALE=0.85 sakura"
 editor = os.getenv("EDITOR") or "nvim"
@@ -112,7 +113,11 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "open terminal", terminal }
                                   }
                         })
-
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                             { "Applications", xdgmenu },
+                                             { "open terminal", terminal }
+                                           }
+                                 })
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
@@ -205,6 +210,10 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
+	-- Create Thermal widget
+	cputempwidget = wibox.widget.textbox()
+    vicious.register(cputempwidget, vicious.widgets.thermal, " CPU: $1C", 10, "thermal_zone1")
+
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
@@ -228,6 +237,7 @@ awful.screen.connect_for_each_screen(function(s)
             mytextclock,
 			require("battery-widget") {},
 			brightness_widget,
+			cputempwidget,
 			volumecfg.widget,
             s.mylayoutbox
         },
@@ -619,7 +629,7 @@ local function bat_notification()
   local bat_capacity = tonumber(f_capacity:read("*all"))
   local bat_status = trim(f_status:read("*all"))
 
-  if (bat_capacity <= 10 and bat_status == "Discharging") then
+  if (bat_capacity <= 15 and bat_status == "Discharging") then
     naughty.notify({ title      = "Battery Warning"
       , text       = "Battery low! " .. bat_capacity .."%" .. " left!"
       , fg="#ff0000"

@@ -10,6 +10,7 @@
      {"Firejail Configuration Wizard", "firejail-ui", "/usr/share/pixmaps/firejail-ui.png" },
      {"Fonts", "gnome-font-viewer "},
      {"HP Device Manager", "hp-toolbox", "///usr/share/hplip/data/images/128x128/hp_logo.png" },
+     {"KeePass Password Safe", "keepass", "/usr/share/icons/hicolor/16x16/apps/keepass.png" },
      {"Maps", "gapplication launch org.gnome.Maps", "/usr/share/icons/hicolor/16x16/apps/org.gnome.Maps.png" },
      {"Neovim", "xterm -e nvim ", "/usr/share/pixmaps/nvim.png" },
      {"Passwords and Keys", "/usr/bin/seahorse", "/usr/share/icons/hicolor/16x16/apps/seahorse.png" },
@@ -37,12 +38,12 @@
  }
 
  local menuc8205c7636e728d448c2774e6a4a944b = {
-     {"AnyDesk", "anydesk", "/usr/share/icons/hicolor/16x16/apps/anydesk.png" },
      {"Avahi SSH Server Browser", "/usr/bin/bssh"},
      {"Avahi VNC Server Browser", "/usr/bin/bvnc"},
      {"Caprine", "caprine"},
      {"Chromium", "/usr/bin/chromium ", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
      {"Discord", "/usr/bin/discord", "///usr/share/pixmaps/discord.png" },
+     {"ELinks", "xterm -e /usr/bin/elinks "},
      {"Firefox Developer Edition", "/usr/lib/firefox-developer-edition/firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox-developer-edition.png" },
      {"Geary", "geary ", "/usr/share/icons/hicolor/16x16/apps/geary.png" },
      {"KDE Connect Indicator", "kdeconnect-indicator", "/usr/share/icons/hicolor/16x16/apps/kdeconnect.png" },
@@ -56,7 +57,7 @@
      {"Syncthing GTK", "syncthing-gtk", "/usr/share/icons/hicolor/16x16/apps/syncthing-gtk.png" },
      {"TeamViewer 13", "/opt/teamviewer/tv_bin/script/teamviewer", "/usr/share/icons/hicolor/16x16/apps/TeamViewer.png" },
      {"Telegram Desktop", "telegram-desktop -- ", "/usr/share/icons/hicolor/16x16/apps/telegram.png" },
-     {"Tor-Browser (en-US)", "bash -c 'GTK_THEME=Adwaita:light /usr/bin/tor-browser-en'", "/usr/share/pixmaps/tor-browser-en.png" },
+     {"Tor-Browser (en-US)", "/usr/bin/tor-browser-en", "/usr/share/pixmaps/tor-browser-en.png" },
      {"Transmission", "transmission-gtk ", "/usr/share/icons/hicolor/16x16/apps/transmission.png" },
      {"Wireshark (GTK+)", "wireshark-gtk ", "/usr/share/icons/hicolor/16x16/apps/wireshark.png" },
      {"X11VNC Server", "x11vnc -gui tray=setpass -rfbport PROMPT -bg -o %HOME/.x11vnc.log.%VNCDISPLAY"},
@@ -68,6 +69,7 @@
      {"Calendar", "gnome-calendar", "/usr/share/icons/hicolor/16x16/apps/org.gnome.Calendar.png" },
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
      {"Evolution", "evolution ", "/usr/share/icons/hicolor/16x16/apps/evolution.png" },
+     {"Texmaker", "texmaker ", "/usr/share/pixmaps/texmaker.png" },
  }
 
  local menue6f43c40ab1c07cd29e4e83e4ef6bf85 = {
@@ -99,7 +101,9 @@
      {"Qt V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
      {"Sound Recorder", "gnome-sound-recorder", "/usr/share/icons/hicolor/16x16/apps/gnome-sound-recorder.png" },
      {"Streamlink Twitch GUI", "/usr/bin/streamlink-twitch-gui", "/usr/share/icons/hicolor/16x16/apps/streamlink-twitch-gui.png" },
+     {"VLC media player", "/usr/bin/vlc --started-from-file ", "/usr/share/icons/hicolor/16x16/apps/vlc.png" },
      {"Videos", "totem ", "/usr/share/icons/hicolor/16x16/apps/org.gnome.Totem.png" },
+     {"avidemux (Qt)", "avidemux3_qt5", "/usr/share/pixmaps/avidemux.png" },
      {"mpv Media Player", "mpv --player-operation-mode=pseudo-gui -- ", "/usr/share/icons/hicolor/16x16/apps/mpv.png" },
  }
 
@@ -125,6 +129,7 @@
      {"VeraCrypt", "veracrypt", "/usr/share/pixmaps/veracrypt.xpm" },
      {"XTerm", "xterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
      {"dconf Editor", "dconf-editor", "/usr/share/icons/hicolor/16x16/apps/dconf-editor.png" },
+     {"ranger", "xterm -e ranger"},
      {"urxvt", "urxvt"},
      {"urxvt (client)", "urxvtc"},
      {"urxvt (tabbed)", "urxvt-tabbed"},
