@@ -66,10 +66,6 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # Preferred editor for local and remote sessions
-function petprev() {
-	PREV=$(fc -lrn | head -n 1)
-	sh -c "pet new `printf %q "$PREV"`"
-}
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='/usr/bin/vim'
 else
@@ -92,7 +88,7 @@ zstyle ':completion:*' known-hosts-files ~/.ssh/not_known_hosts
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zsh_secrets
+source ~/.zshrc.common
 #source ~/git-extras/etc/git-extras-completion.zsh
 export GOPATH="$HOME/go"
 PATH="$PATH:/home/willb/.yarn/bin"
@@ -119,9 +115,6 @@ POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=false
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_mpd node_version todo)
 export LC_ALL=en_AU.UTF-8
-alias updatemicro="go get -d -v github.com/zyedidia/micro/... && (cd $GOPATH/src/github.com/zyedidia/micro; make install)"
-alias t="todo.sh"
-alias vim="nvim"
 neofetch
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 # ZSH History DB
