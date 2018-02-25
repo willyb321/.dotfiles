@@ -66,11 +66,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # Preferred editor for local and remote sessions
+function petprev() {
+	PREV=$(fc -lrn | head -n 1)
+	sh -c "pet new `printf %q "$PREV"`"
+}
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='/usr/bin/vim'
 else
    export EDITOR='/usr/bin/vim'
- fi
+fi
 zstyle ':completion:*' hosts
 zstyle ':completion:*' users
 zstyle ':completion:*' known-hosts-files ~/.ssh/not_known_hosts
