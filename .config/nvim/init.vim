@@ -209,6 +209,11 @@ set mouse=a
 
 " End
 
+" Yaml / YML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
+
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
