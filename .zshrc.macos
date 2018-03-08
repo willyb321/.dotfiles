@@ -191,7 +191,5 @@ neofetch
 #source <(gopass completion zsh)
 source $HOME/.zsh_proxy
 #ulimit -n 65536 65536
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-
+source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
