@@ -59,6 +59,7 @@ export GOBIN="$HOME/go/bin"
 
 # PATH stuff.
 PATH="/Users/willb/go/bin:$PATH"
+PATH="/Users/willb/.nmbin/bin:$PATH"
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:/usr/bin"
 PATH="$PATH:/bin"
@@ -117,6 +118,7 @@ alias serve="http-server -o -c-1"
 alias externalWifi="sudo /Library/Application\ Support/WLAN/StatusBarApp.app/Contents/MacOS/wpa_supplicant -Dosx -ien7  -c ~/wpa/profile1x.rtl"
 alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
+alias vim="nvim"
 eval "$(thefuck --alias)"
 #source <(antibody init)
 source ~/.zsh_secrets
@@ -188,6 +190,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_proxy custom_mpd  custom_wifi_
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 neofetch
+. /usr/local/etc/profile.d/piknik.sh
 #source <(gopass completion zsh)
 source $HOME/.zsh_proxy
 #ulimit -n 65536 65536
