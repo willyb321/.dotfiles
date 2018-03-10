@@ -58,6 +58,7 @@ export GOBIN="$HOME/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # PATH stuff.
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/Users/willb/go/bin:$PATH"
 PATH="/Users/willb/.nmbin/bin:$PATH"
 PATH="$PATH:/usr/local/bin"
@@ -65,7 +66,7 @@ PATH="$PATH:/usr/bin"
 PATH="$PATH:/bin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
-PATH="$PATH:/Users/willb/bin"
+PATH="$PATH:/Users/willb/.bin"
 PATH="$PATH:/opt/metasploit-framework/bin"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/opt/local/sbin"
@@ -119,7 +120,7 @@ alias externalWifi="sudo /Library/Application\ Support/WLAN/StatusBarApp.app/Con
 alias toggle-prox=". prox-toggle"
 alias lsdotfiles="printf '%s\n' .*"
 alias vim="nvim"
-eval "$(thefuck --alias)"
+#eval "$(thefuck --alias)"
 #source <(antibody init)
 source ~/.zsh_secrets
 # ZSH-histdb
@@ -186,13 +187,14 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_proxy custom_mpd  custom_wifi_signal node_version todo)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_proxy custom_wifi_signal node_version todo)
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
-neofetch
 . /usr/local/etc/profile.d/piknik.sh
 #source <(gopass completion zsh)
 source $HOME/.zsh_proxy
 #ulimit -n 65536 65536
 source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+source .zshrc.common
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#neofetch
